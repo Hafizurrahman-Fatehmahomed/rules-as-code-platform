@@ -1,0 +1,8 @@
+backend
+database
+docker-compose.yml
+README.md
+docs
+scripts
+.git
+.gitignore
