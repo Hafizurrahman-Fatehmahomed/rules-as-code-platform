@@ -107,9 +107,10 @@ export default function ScenarioComparison({ baseParams }: ScenarioComparisonPro
     setLoading(true);
     setError(null);
     try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
       // Calculate all three scenarios
       const calculationPromises = scenarios.map(scenario =>
-        fetch('http://localhost:8000/api/v1/calculations/scenario', {
+        fetch(`${apiUrl}/api/v1/calculations/scenario`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
