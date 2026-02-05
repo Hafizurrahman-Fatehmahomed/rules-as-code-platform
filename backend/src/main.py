@@ -29,10 +29,13 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS middleware - use settings from config
+# CORS middleware - get origins from settings with safe parsing
+cors_origins = settings.get_cors_origins()
+print(f"✅ CORS enabled for: {cors_origins}")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins,
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -45,7 +48,7 @@ async def health():
         "status": "healthy",
         "version": "1.0.0",
         "environment": settings.environment,
-        "cors_origins": settings.cors_origins
+        "cors_origins": settings.get_cors_origins()
     }
 
 # Include routers
@@ -61,4 +64,5 @@ async def root():
         "status": "operational",
         "docs": "/docs"
     }
+
 

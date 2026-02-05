@@ -18,8 +18,8 @@ class Settings(BaseSettings):
     # Redis
     redis_url: str = os.getenv("REDIS_URL", "redis://localhost:6379")
     
-    # CORS - defaults to localhost for development
-    cors_origins: list = ["http://localhost:3000", "http://localhost:8000"]
+    # CORS - define as string to prevent JSON parsing, parse in method
+    cors_origins_str: str = "http://localhost:3000,http://localhost:8000"
     
     # API
     api_prefix: str = "/api/v1"
@@ -27,28 +27,32 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
     
-    @field_validator("cors_origins", mode="before")
-    @classmethod
-    def parse_cors_origins(cls, v):
-        """Parse CORS origins from environment variable"""
-        if v is None or v == "":
-            # Return defaults if not set
-            return ["http://localhost:3000", "http://localhost:8000", "https://rules-as-code-platform.vercel.app"]
+    def get_cors_origins(self) -> list:
+        """Get CORS origins as a list"""
+        cors_env = os.getenv("CORS_ORIGINS")
         
-        if isinstance(v, str):
-            # Handle comma-separated string
-            if v.startswith("["):
-                # Try to parse as JSON
+        # If explicitly set in environment, use it
+        if cors_env and cors_env.strip():
+            origins_str = cors_env.strip()
+            # Try JSON parsing first
+            if origins_str.startswith("["):
                 try:
-                    return json.loads(v)
-                except json.JSONDecodeError:
-                    # If JSON parsing fails, treat as comma-separated
-                    return [origin.strip() for origin in v.split(",")]
-            else:
-                # Comma-separated string
-                return [origin.strip() for origin in v.split(",")]
+                    return json.loads(origins_str)
+                except (json.JSONDecodeError, ValueError):
+                    # Fall back to comma-separated
+                    pass
+            # Parse as comma-separated
+            return [origin.strip() for origin in origins_str.split(",") if origin.strip()]
         
-        # Already a list
-        return v if isinstance(v, list) else [v]
+        # Default for development
+        if self.environment == "development":
+            return ["http://localhost:3000", "http://localhost:8000"]
+        
+        # Default for production - include Vercel domain
+        return [
+            "https://rules-as-code-platform.vercel.app",
+            "http://localhost:3000",
+            "http://localhost:8000"
+        ]
 
 settings = Settings()
