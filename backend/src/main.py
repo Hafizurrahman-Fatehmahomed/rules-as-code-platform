@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 from contextlib import asynccontextmanager
 
+from .config import settings
 from .api import scenarios, rules, calculations
 from .services.cache import init_cache
 from .services.database import init_db
@@ -28,10 +29,10 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS middleware
+# CORS middleware - use settings from config
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("CORS_ORIGINS", "http://localhost:4000").split(","),
+    allow_origins=settings.cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -43,7 +44,8 @@ async def health():
     return {
         "status": "healthy",
         "version": "1.0.0",
-        "environment": os.getenv("ENVIRONMENT", "development")
+        "environment": settings.environment,
+        "cors_origins": settings.cors_origins
     }
 
 # Include routers
@@ -59,3 +61,4 @@ async def root():
         "status": "operational",
         "docs": "/docs"
     }
+
