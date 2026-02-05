@@ -378,6 +378,7 @@ def calculate_net_income(
         "lump_sum_amount": float(lump_sum_amount),
         "pension_contribution_pct": pension_contribution_pct,
         "pension_amount": float(pension_amount),
+        "taxable_income": float(gross_income - pension_amount),
         "taxable_income_before_lump_sum": float(gross_income - pension_amount),
         "taxable_income_with_lump_sum": float(taxable_income),
         "income_tax": float(income_tax),
