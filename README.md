@@ -6,8 +6,6 @@ Een volledig functioneel webplatform waarmee Nederlandse burgers verschillende p
 
 **Probeer nu:** [https://rules-as-code-platform.vercel.app/](https://rules-as-code-platform.vercel.app/)
 
-Backend API: `https://rules-as-code-production.up.railway.app` (Production)
-
 ## 🎯 Projectoverzicht
 
 Dit platform lost een kritiek probleem op: burgers begrijpen niet hoe pensioenbeslissingen hun totale financiële situatie beïnvloeden. Een pensioenbijdrage van 5% beïnvloedt niet alleen de nettoloon—het beïnvloedt inkomstenbelasting, huurtoeslag, zorgverzekeringsteun en meer. Deze complexe regelinteracties zijn momenteel onzichtbaar.
@@ -193,9 +191,9 @@ npm run test:e2e
 
 <div align="center">
 
-**[Download Presentatie](Rules_as_Code.pptx)** | **[View Online](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/Hafizurrahman-Fatehmahomed/rules-as-code-platform/master/Rules_as_Code.pptx)**
+**[📺 Live Presentatie Bekijken](docs/presentation.html)** | **[⬇️ Download PowerPoint](Rules_as_Code.pptx)**
 
-[![Rules as Code Presentation](https://img.shields.io/badge/PowerPoint-Presentatie-orange?style=flat-square&logo=microsoftpowerpoint)](Rules_as_Code.pptx)
+[![Open Presentation](https://img.shields.io/badge/Presentatie-Live%20Viewer-orange?style=for-the-badge&logo=microsoftpowerpoint)](docs/presentation.html)
 
 </div>
 
