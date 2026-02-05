@@ -191,11 +191,21 @@ npm run test:e2e
 
 <div align="center">
 
-**[📺 Live Presentatie Bekijken](docs/presentation.html)** | **[⬇️ Download PowerPoint](Rules_as_Code.pptx)**
-
-[![Open Presentation](https://img.shields.io/badge/Presentatie-Live%20Viewer-orange?style=for-the-badge&logo=microsoftpowerpoint)](docs/presentation.html)
+**[📺 Presentatie Online Bekijken](#presentatie-viewer)**
 
 </div>
+
+---
+
+## 📺 Presentatie Viewer
+
+<iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/Hafizurrahman-Fatehmahomed/rules-as-code-platform/master/Rules_as_Code.pptx&embedded=true" style="width:100%; height:800px; border:none; border-radius:8px; margin:20px 0;" frameborder="0"></iframe>
+
+**Download:**
+- [📥 PowerPoint (.pptx)](Rules_as_Code.pptx)
+- [📄 View on Office Online](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/Hafizurrahman-Fatehmahomed/rules-as-code-platform/master/Rules_as_Code.pptx)
+
+---
 
 ## 🎨 UI/UX Features
 
