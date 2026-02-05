@@ -191,21 +191,19 @@ npm run test:e2e
 
 <div align="center">
 
-**[📺 Presentatie Online Bekijken](#presentatie-viewer)**
+**[📺 Klik hier om Presentatie te bekijken](https://docs.google.com/gview?url=https://raw.githubusercontent.com/Hafizurrahman-Fatehmahomed/rules-as-code-platform/master/Rules_as_Code.pptx&embedded=true)** 
+
+**of**
+
+**[📄 Open in Microsoft Office](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/Hafizurrahman-Fatehmahomed/rules-as-code-platform/master/Rules_as_Code.pptx)**
+
+| | |
+|---|---|
+| **📥 Download** | [PowerPoint (.pptx)](Rules_as_Code.pptx) |
+| **Duration** | ~15 minuten |
+| **Topics** | Project Overview, Dutch Tax Rules, Calculator Demo, Rules as Code |
 
 </div>
-
----
-
-## 📺 Presentatie Viewer
-
-<iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/Hafizurrahman-Fatehmahomed/rules-as-code-platform/master/Rules_as_Code.pptx&embedded=true" style="width:100%; height:800px; border:none; border-radius:8px; margin:20px 0;" frameborder="0"></iframe>
-
-**Download:**
-- [📥 PowerPoint (.pptx)](Rules_as_Code.pptx)
-- [📄 View on Office Online](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/Hafizurrahman-Fatehmahomed/rules-as-code-platform/master/Rules_as_Code.pptx)
-
----
 
 ## 🎨 UI/UX Features
 
